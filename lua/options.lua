@@ -19,6 +19,10 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Set default indent size to 4
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+
 -- Save undo history
 vim.opt.undofile = true
 
@@ -54,3 +58,5 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+vim.cmd 'let $PATH = $NVM_DIR . "/versions/node/v20.11.1/bin:" . $PATH'

@@ -38,7 +38,12 @@ require('lazy').setup({
   require 'plugins/telescope',
   require 'plugins/treesitter',
   require 'plugins/which-key',
+  require 'plugins/neo-tree',
 
+  {
+    'pipoprods/nvm.nvim',
+    config = true,
+  },
   {
     'ellisonleao/gruvbox.nvim',
     priority = 1000,
@@ -53,12 +58,10 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = { signs = false },
   },
-
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 }, {
   ui = {
