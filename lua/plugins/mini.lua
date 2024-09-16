@@ -31,7 +31,6 @@ return {
       return '%2l:%-2v'
     end
 
-    -- ... and there is more!
-    --  Check out: https://github.com/echasnovski/mini.nvim
+    vim.g.minicomment_disable = true
   end,
 }
