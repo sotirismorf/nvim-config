@@ -45,6 +45,10 @@ require('lazy').setup({
     config = true,
   },
   {
+    'norcalli/nvim-colorizer.lua',
+    opts = { nil, { names = false } },
+  },
+  {
     'ellisonleao/gruvbox.nvim',
     priority = 1000,
     config = function()

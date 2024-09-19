@@ -56,6 +56,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       pickers = {
         buffers = {
           theme = 'dropdown',
+          initial_mode = 'normal',
           previewer = false,
         },
       },
