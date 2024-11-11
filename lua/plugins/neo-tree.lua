@@ -15,6 +15,11 @@ return {
   },
   opts = {
     filesystem = {
+      filtered_items = {
+        never_show_by_pattern = {
+          '**/*_templ.go',
+        },
+      },
       window = {
         mappings = {
           ['\\'] = 'close_window',

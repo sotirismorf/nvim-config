@@ -30,22 +30,23 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
+  -- require 'plugins/avante',
   require 'plugins/cmp',
   require 'plugins/conform',
   require 'plugins/gitsigns',
   require 'plugins/lsp',
   require 'plugins/mini',
+  require 'plugins/neo-tree',
   require 'plugins/telescope',
   require 'plugins/treesitter',
   require 'plugins/which-key',
-  require 'plugins/neo-tree',
 
   {
     'pipoprods/nvm.nvim',
     config = true,
   },
   {
-    'norcalli/nvim-colorizer.lua',
+    'NvChad/nvim-colorizer.lua',
     opts = { nil, { names = false } },
   },
   {

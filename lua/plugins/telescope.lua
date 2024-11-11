@@ -53,6 +53,13 @@ return { -- Fuzzy Finder (files, lsp, etc)
       --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
       --   },
       -- },
+      defaults = {
+        file_ignore_patterns = {
+          '^LICENSE*',
+          '^license*',
+          '%_templ.go$',
+        },
+      },
       pickers = {
         buffers = {
           theme = 'dropdown',
