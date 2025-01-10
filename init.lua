@@ -29,6 +29,7 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'christoomey/vim-tmux-navigator',
 
   -- require 'plugins/avante',
   require 'plugins/cmp',
