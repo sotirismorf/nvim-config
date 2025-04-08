@@ -153,6 +153,7 @@ return {
         templ = {},
         htmx = {},
         deno = {},
+        clangd = {},
         tailwindcss = {
           filetypes = { 'templ', 'javascript', 'typescript', 'react' },
           settings = {
