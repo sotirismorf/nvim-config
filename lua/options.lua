@@ -1,5 +1,7 @@
 -- Make line numbers default
 vim.opt.number = true
+
+vim.opt.background = 'dark' -- or "light" for light mode
 -- vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -25,6 +27,8 @@ vim.opt.tabstop = 4
 
 -- Save undo history
 vim.opt.undofile = true
+
+vim.opt.completeopt = 'menu,menuone,noinsert,fuzzy,popup'
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true

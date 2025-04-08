@@ -2,11 +2,6 @@
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic keymaps
--- vim.keymap.set('n', '<leader>lq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-vim.keymap.set('n', '<Leader>lj', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
-vim.keymap.set('n', '<Leader>lk', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
-
 -- Toggle comments (built-in since v0.10 https://github.com/neovim/neovim/pull/28176)
 vim.keymap.set('n', '<Leader>c', 'gcc', { desc = 'Toggle comment line', remap = true })
 vim.keymap.set('v', '<Leader>c', 'gc', { desc = 'Toggle comment', remap = true })
