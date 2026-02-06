@@ -39,7 +39,7 @@ require('lazy').setup {
 
   -- collection of many useful plugins
   {
-    'echasnovski/mini.nvim',
+    'nvim-mini/mini.nvim',
     config = function()
       require('mini.indentscope').setup()
       require('mini.pairs').setup()
@@ -51,14 +51,42 @@ require('lazy').setup {
       end
     end,
   },
-
+  {
+    'eero-lehtinen/oklch-color-picker.nvim',
+    event = 'VeryLazy',
+    version = '*',
+    keys = {
+      -- One handed keymap recommended, you will be using the mouse
+      {
+        '<leader>v',
+        function()
+          require('oklch-color-picker').pick_under_cursor()
+        end,
+        desc = 'Color pick under cursor',
+      },
+    },
+    ---@type oklch.Opts
+    opts = {},
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
   { 'christoomey/vim-tmux-navigator' }, -- TMUX integration
   { 'pipoprods/nvm.nvim', config = true },
   { 'brianaung/compl.nvim' },
-  { 'catgoose/nvim-colorizer.lua', event = 'BufReadPre', opts = { user_default_options = { names = false } } },
+  { 'neovim/nvim-lspconfig' },
+  { 'windwp/nvim-ts-autotag', config = true },
+  -- { 'catgoose/nvim-colorizer.lua', event = 'BufReadPre', opts = { user_default_options = { names = false } } },
   { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
   { 'williamboman/mason.nvim', config = true },
+  { 'nvim-pack/nvim-spectre', config = true },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' } },
 }
 

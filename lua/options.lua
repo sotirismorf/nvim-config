@@ -65,4 +65,4 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-vim.cmd 'let $PATH = $NVM_DIR . "/versions/node/v20.11.1/bin:" . $PATH'
+-- vim.cmd 'let $PATH = $NVM_DIR . "/versions/node/v20.11.1/bin:" . $PATH'

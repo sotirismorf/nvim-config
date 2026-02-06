@@ -1,3 +1,4 @@
+-- return {}
 return {
   -- https://cmp.saghen.dev/installation.html
   'saghen/blink.cmp',
