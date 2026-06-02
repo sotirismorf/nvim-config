@@ -99,6 +99,8 @@ require('lazy').setup {
         javascript = { 'prettier' },
         typescript = { 'prettier' },
         svelte = { 'prettier' },
+        html = { 'prettier' },
+        css = { 'prettier' },
         sh = { 'shfmt' },
         bash = { 'shfmt' },
       },
@@ -202,7 +204,7 @@ require('lazy').setup {
       -- stylua: ignore
       require('nvim-treesitter').install {
         'bash', 'go', 'diff', 'html', 'javascript', 'lua', 'luadoc',
-        'typst', 'markdown', 'markdown_inline', 'query', 'svelte',
+        'typst', 'markdown', 'markdown_inline', 'css', 'query', 'svelte',
         'typescript', 'vim', 'vimdoc',
       }
       vim.api.nvim_create_autocmd('FileType', {
@@ -292,11 +294,13 @@ require('lazy').setup {
         'stylua',
         'python-lsp-server',
         'tailwindcss-language-server',
+        'css-lsp',
         'bash-language-server',
         'goimports',
         'gopls',
         'prettier',
         'shfmt',
+        'yaml-language-server',
         'svelte-language-server',
         'templ',
         'tinymist',
@@ -318,7 +322,9 @@ vim.lsp.enable {
   'ts_ls',
   'bashls',
   'tailwindcss',
+  'cssls',
   'pylsp',
+  'yamlls',
 }
 
 vim.diagnostic.config {
