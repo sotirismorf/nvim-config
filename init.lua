@@ -113,8 +113,13 @@ require('lazy').setup {
         svelte = { 'prettier' },
         html = { 'prettier' },
         css = { 'prettier' },
+        markdown = { 'prettier' },
         sh = { 'shfmt' },
         bash = { 'shfmt' },
+      },
+      formatters = {
+        -- Hard-wrap prose at 80 cols (matches textwidth/gq); no-op for code.
+        prettier = { prepend_args = { '--prose-wrap', 'always', '--print-width', '80' } },
       },
     },
   },
