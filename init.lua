@@ -66,10 +66,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd('FileType', {
   group = vim.api.nvim_create_augroup('filetype-options', { clear = true }),
   pattern = { 'markdown', 'tex', 'text' },
-  callback = function()
+  callback = function(ev)
     vim.opt_local.spell = true
     vim.opt_local.spelllang = 'el,en'
     vim.opt_local.textwidth = 80
+    -- Hanging-indent reflow for `gq` on numbered/bulleted lists.
+    vim.opt_local.autoindent = true
+    vim.opt_local.formatoptions:append 'n'
+    vim.opt_local.formatlistpat = [[^\s*\d\+[.)]\s\+\|^\s*[-*+]\s\+]]
+    -- Treesitter sets a buffer-local indentexpr on FileType (runs after this
+    -- autocmd) which makes `gq` ignore autoindent and drop the hanging indent
+    -- after the first wrapped line. Clear it once all FileType callbacks ran.
+    vim.schedule(function()
+      if vim.api.nvim_buf_is_valid(ev.buf) then
+        vim.bo[ev.buf].indentexpr = ''
+      end
+    end)
   end,
 })
 
